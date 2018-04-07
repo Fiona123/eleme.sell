@@ -14,4 +14,13 @@ body, html
 	line-height: 1
 	font-weight: 200
 	font-size: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', 'Arial', 'Sans-serif'
-	
+
+.clearfix
+  display inline-block
+  &:after
+    content '.'
+    display block
+    height 0px
+    line-height 0px
+    clear both
+    visibility hidden

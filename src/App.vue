@@ -17,9 +17,10 @@
 </template>
 
 <script type="script/ecmascript-6">
-import header from './components/header/header.vue';
+import header from 'components/header/header.vue';
+import data from 'src/data.json';
 
-const ERR_OK = 0;
+// const ERR_OK = 0;
 
 export default {
   data () {
@@ -28,14 +29,15 @@ export default {
     };
   },
   created () {
-    this.$http.get('/api/seller').then((response) => {
-      response = response.body;
-      console.log(response);
-      if (response.errno === ERR_OK) {
-        this.seller = response.data;
-        console.log('seller:' + this.seller);
-      }
-    });
+    this.seller = data.seller;
+    // this.$http.get('/api/seller').then((response) => {
+    //   response = response.body;
+    //   console.log(response);
+    //   if (response.errno === ERR_OK) {
+    //     this.seller = response.data;
+    //     console.log('seller:' + this.seller);
+    //   }
+    // });
   },
   components: {
     vheader: header
